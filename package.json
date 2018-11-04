@@ -1,10 +1,10 @@
 {
   "name": "reax-ui",
-  "version": "0.0.1101",
+  "version": "0.0.1104",
   "description": "A modern react UI library",
   "main": "build/index.js",
   "peerDependencies": {
-    "react": "^15.5.4"
+    "react": "^16.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,7 +30,9 @@
     "url": "https://github.com/Patrick-W-McMahon/reax-ui/issues"
   },
   "dependencies": {
-    "react": "^15.5.4",
+    "prop-type": "0.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.6.0",
     "webpack": "^2.6.1"
   },
   "devDependencies": {
