@@ -1,5 +1,5 @@
-import { Conditional as ConditionalComponent } from './components/Conditional';
+import Conditional from './components/Conditional';
 
-export function Conditional() {
-    return ConditionalComponent;
-}
+export {
+    Conditional
+};
