@@ -1,1 +1,1 @@
-ReaUI is a modern React UI
+reax-ui is a modern React UI
