@@ -99,13 +99,15 @@ exports.default = Conditional;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Conditional = Conditional;
+exports.Conditional = undefined;
 
 var _Conditional = __webpack_require__(0);
 
-function Conditional() {
-    return _Conditional.Conditional;
-}
+var _Conditional2 = _interopRequireDefault(_Conditional);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Conditional = _Conditional2.default;
 
 /***/ }),
 /* 2 */

@@ -1,5 +1,5 @@
 {
-  "name": "ReaUI",
+  "name": "reax-ui",
   "version": "0.0.1",
   "description": "A modern react UI library",
   "main": "build/index.js",
@@ -11,7 +11,11 @@
     "start": "webpack --watch",
     "build": "webpack"
   },
-  "keywords":["UI","UX","React"],
+  "keywords": [
+    "UI",
+    "UX",
+    "React"
+  ],
   "author": {
     "name": "Patrick W. McMahon",
     "email": "patrick.w.mcmahon@gmail.com"
