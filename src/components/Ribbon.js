@@ -19,11 +19,12 @@ class Ribbon extends component {
     static Tab = RibbonTab;
 
     render() {
+        const { children } = this.props;
         const { tabIndex } = this.state;
-        const tabs = React.Children.map(this.props.children, (child, index) => {
+        const tabs = React.Children.map(children, (child, index) => {
             switch(child.type.displayName) {
                 case "Ribbon Tab":
-                    return React.cloneElement(child, { onClick: () => this.tabSelection(index) });
+                    return React.cloneElement(child, { onClick: () => this.tabSelection(index), renderType: 'tab' });
             }
             return child;
         });
@@ -33,7 +34,7 @@ class Ribbon extends component {
                     {tabs}
                 </div>
                 <div className="content">
-                    {props.children[tabIndex].children}
+                    {children[tabIndex]}
                 </div>
             </div>
         );

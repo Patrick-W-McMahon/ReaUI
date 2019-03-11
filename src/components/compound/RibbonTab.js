@@ -6,7 +6,7 @@ const RibbonTab = props => {
     switch(renderType){
         case "tab":
             return <div className={`tab`} onClick={onClick} >{title}</div>;
-        case "content":
+        default:
             return {children}; 
     }
 };
