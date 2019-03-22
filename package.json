@@ -1,6 +1,6 @@
 {
   "name": "reax-ui",
-  "version": "0.0.1104",
+  "version": "0.0.1105",
   "description": "A modern react UI library",
   "main": "build/index.js",
   "peerDependencies": {
@@ -33,7 +33,7 @@
     "prop-type": "0.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.6.0",
-    "webpack": "^2.6.1"
+    "webpack": "^2.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,6 +261,41 @@ process.umask = function() { return 0; };
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(11)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(10)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -277,7 +312,13 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 2 */
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -287,11 +328,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(9);
+var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(8);
+var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -309,7 +350,7 @@ Conditional.propTypes = {
 exports.default = Conditional;
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -318,18 +359,179 @@ exports.default = Conditional;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Conditional = undefined;
 
-var _Conditional = __webpack_require__(2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _RibbonTab = __webpack_require__(6);
+
+var _RibbonTab2 = _interopRequireDefault(_RibbonTab);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Ribbon = function (_component) {
+    _inherits(Ribbon, _component);
+
+    function Ribbon(props) {
+        _classCallCheck(this, Ribbon);
+
+        var _this = _possibleConstructorReturn(this, (Ribbon.__proto__ || Object.getPrototypeOf(Ribbon)).call(this, props));
+
+        _this.state = {
+            tabIndex: 0
+        };
+        _this.tabSelection = _this.tabSelection.bind(_this);
+        return _this;
+    }
+
+    _createClass(Ribbon, [{
+        key: 'tabSelection',
+        value: function tabSelection(tabIndex) {
+            this.setState({ tabIndex: tabIndex });
+        }
+
+        // static Tab = RibbonTab;
+
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var children = this.props.children;
+            var tabIndex = this.state.tabIndex;
+
+            var tabs = _react2.default.Children.map(children, function (child, index) {
+                switch (child.type.displayName) {
+                    case "Ribbon Tab":
+                        return _react2.default.cloneElement(child, { onClick: function onClick() {
+                                return _this2.tabSelection(index);
+                            }, renderType: 'tab' });
+                }
+                return child;
+            });
+            return _react2.default.createElement(
+                'div',
+                { className: 'nav nav-ribbon' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'tabs' },
+                    tabs
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'content' },
+                    children[tabIndex]
+                )
+            );
+        }
+    }]);
+
+    return Ribbon;
+}(_react.component);
+
+;
+
+Ribbon.propTypes = {
+    children: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        title: _propTypes2.default.string,
+        onClick: _propTypes2.default.func.isRequired
+    }))
+};
+Ribbon.Tab = _RibbonTab2.default;
+exports.default = Ribbon;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var RibbonTab = function RibbonTab(props) {
+    var title = props.title,
+        children = props.children,
+        renderType = props.renderType,
+        onClick = props.onClick;
+
+    switch (renderType) {
+        case "tab":
+            return _react2.default.createElement(
+                'div',
+                { className: 'tab', onClick: onClick },
+                title
+            );
+        default:
+            return { children: children };
+    }
+};
+
+RibbonTab.propTypes = {
+    title: _propTypes2.default.any.isRequired,
+    children: _propTypes2.default.any,
+    renderType: _propTypes2.default.string
+};
+RibbonTab.defaultProps = {
+    title: 'tab'
+};
+
+RibbonTab.displayName = "Ribbon Tab";
+
+exports.default = RibbonTab;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Ribbon = exports.Conditional = undefined;
+
+var _Conditional = __webpack_require__(4);
 
 var _Conditional2 = _interopRequireDefault(_Conditional);
+
+var _Ribbon = __webpack_require__(5);
+
+var _Ribbon2 = _interopRequireDefault(_Ribbon);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Conditional = _Conditional2.default;
+exports.Ribbon = _Ribbon2.default;
 
 /***/ }),
-/* 4 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -426,7 +628,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 5 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -442,7 +644,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(1);
+  var ReactPropTypesSecret = __webpack_require__(2);
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -525,7 +727,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 6 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -538,7 +740,7 @@ module.exports = checkPropTypes;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(1);
+var ReactPropTypesSecret = __webpack_require__(2);
 
 function emptyFunction() {}
 
@@ -591,7 +793,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 7 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -604,10 +806,10 @@ module.exports = function() {
 
 
 
-var assign = __webpack_require__(4);
+var assign = __webpack_require__(8);
 
-var ReactPropTypesSecret = __webpack_require__(1);
-var checkPropTypes = __webpack_require__(5);
+var ReactPropTypesSecret = __webpack_require__(2);
+var checkPropTypes = __webpack_require__(9);
 
 var printWarning = function() {};
 
@@ -1152,47 +1354,6 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 };
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(7)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(6)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = require("react");
 
 /***/ })
 /******/ ]);

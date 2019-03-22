@@ -16,8 +16,6 @@ class Ribbon extends component {
         this.setState({ tabIndex });
     }
 
-    static Tab = RibbonTab;
-
     render() {
         const { children } = this.props;
         const { tabIndex } = this.state;
