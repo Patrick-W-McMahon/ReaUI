@@ -402,9 +402,6 @@ var Ribbon = function (_component) {
         value: function tabSelection(tabIndex) {
             this.setState({ tabIndex: tabIndex });
         }
-
-        // static Tab = RibbonTab;
-
     }, {
         key: 'render',
         value: function render() {
