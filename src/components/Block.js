@@ -7,9 +7,6 @@ const Content = ({ children, isContainer, contentClasses }) => <div className={`
 Content.displayName = "Content";
 
 class Block extends Component {
-    static Title = Title;
-    static Content = Content;
-
     render() {
         const { children, color, setColor, sectionName } = this.props;
         const style = setColor ? { backgroundColor: setColor } : null;
@@ -29,4 +26,6 @@ class Block extends Component {
         );
     }
 }
+Block.Title = Title;
+Block.Content = Content;
 export default Block;

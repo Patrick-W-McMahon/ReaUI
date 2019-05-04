@@ -15,7 +15,6 @@ FA.propTypes = {
 };
 
 class Icon extends Component {
-    static FA = FA;
     render() {
         const { children } = this.props;
         return (
@@ -29,4 +28,5 @@ class Icon extends Component {
         );
     }
 }
+Icon.FA = FA;
 export default Icon;
