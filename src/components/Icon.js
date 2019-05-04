@@ -1,7 +1,18 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-const FA = ({ icon, size, type }) => <i className={`${type ? type : 'fab'} fa-${icon}${size?` fa-${size}`:''}`} ></i>;
+const FA = ({ icon, size, type, spin }) => <i className={`${type} fa-${icon}${size?` fa-${size}`:''}${spin ? ' fa-spin' : ''}`} ></i>;
 FA.displayName = "FontAwesome";
+FA.defaultProps = {
+    type: 'fab',
+    span: false
+};
+FA.propTypes = {
+    icon: PropTypes.string.isRequired,
+    size: PropTypes.number,
+    type: PropTypes.string,
+    spin: PropTypes.bool
+};
 
 class Icon extends Component {
     static FA = FA;
