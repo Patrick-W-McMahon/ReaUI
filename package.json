@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
+    "build-dev": "webpack --mode=development",
     "build": "webpack --mode=production"
   },
   "keywords": [
@@ -31,21 +32,19 @@
     "url": "https://github.com/Patrick-W-McMahon/reax-ui/issues"
   },
   "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^2.1.1",
-    "prop-type": "0.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "style-loader": "^0.23.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.1.5",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
   }
