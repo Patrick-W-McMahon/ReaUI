@@ -16,9 +16,12 @@
     "UX",
     "React"
   ],
-  "author": "Patrick W. McMahon <patrick.w.mcmahon@gmail.com>",
+  "author": {
+    "name": "Patrick W. McMahon",
+    "email": "patrick.w.mcmahon@gmail.com"
+  },
   "private": false,
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/Patrick-W-McMahon/reax-ui",
   "repository": {
     "type": "git",
