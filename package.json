@@ -20,7 +20,7 @@
     "name": "Patrick W. McMahon",
     "email": "patrick.w.mcmahon@gmail.com"
   },
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/Patrick-W-McMahon/reax-ui",
   "repository": {
     "type": "git",
@@ -30,10 +30,11 @@
     "url": "https://github.com/Patrick-W-McMahon/reax-ui/issues"
   },
   "dependencies": {
+    "internal": "^1.0.8",
     "prop-type": "0.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.6.0",
-    "webpack": "^2.6.1"
+    "webpack": "^2.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
