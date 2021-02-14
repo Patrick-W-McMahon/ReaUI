@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
-    "build": "webpack"
+    "build-dev": "webpack --mode=development",
+    "build": "webpack --mode=production"
   },
   "keywords": [
     "UI",
@@ -20,30 +21,38 @@
     "name": "Patrick W. McMahon",
     "email": "patrick.w.mcmahon@gmail.com"
   },
+  "private": false,
   "license": "Apache-2.0",
   "homepage": "https://github.com/Patrick-W-McMahon/reax-ui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Patrick-W-McMahon/reax-ui.git"
+    "url": "git+https://github.com/Patrick-W-McMahon/reax-ui.git"
   },
   "bugs": {
     "url": "https://github.com/Patrick-W-McMahon/reax-ui/issues"
   },
   "dependencies": {
-    "internal": "^2.0.27",
+    "@babel/core": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
-    "webpack": "^5.21.2"
+    "style-loader": "^0.23.1"
   },
   "devDependencies": {
+    "webpack": "^5.21.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0"
-  }
+  },
 }

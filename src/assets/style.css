@@ -1,0 +1,18 @@
+.block {
+    display: block;
+    padding: 8px;
+    margin: 10px;
+    width: 100%;
+}
+
+.block-title {
+    font-family: 'prenton-condensed',sans-serif;
+    margin-bottom: 9px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.block-content {
+    font-size: 0.75em;
+    padding: 3px;
+}
