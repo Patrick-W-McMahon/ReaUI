@@ -4,7 +4,7 @@
   "description": "A modern react UI library",
   "main": "build/index.js",
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^17.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,18 +30,20 @@
     "url": "https://github.com/Patrick-W-McMahon/reax-ui/issues"
   },
   "dependencies": {
-    "internal": "^1.0.8",
-    "prop-type": "0.0.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.6.0",
-    "webpack": "^2.7.0"
+    "internal": "^2.0.27",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-markdown": "^5.0.3",
+    "react-router-dom": "^5.2.0",
+    "webpack": "^5.21.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+    "babel-preset-env": "^1.7.0"
   }
 }
